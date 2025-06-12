@@ -1,0 +1,56 @@
+# Java build files
+**/target/
+**/build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Logs
+*.log
+**/logs/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.local
+*.properties.local
+
+# Maven
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+
+# Gradle
+**/.gradle/
+**/gradlew
+**/gradlew.bat
+
+# Docker
+**/docker-compose.override.yml
+**/docker-compose.dev.yml
+
+# Redis/RabbitMQ runtime data (optional)
+**/data/
+**/tmp/
+
+# IDEs & tools
+.vscode/
+*.swp
+*.swo
+
+# Test reports
+**/test-output/
+**/surefire-reports/
+
+# Camunda BPMN modeler temp files
+*.bpmn.backup
+
+# Misc
+*.class
