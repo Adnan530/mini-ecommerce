@@ -1,0 +1,12 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  config:
+    import: optional:file:infra/dev.env[.properties]
+  application:
+    name: notification-service
+
+rabbitmq:
+  payment-processed:
+    queue: payment.processed.queue
+  exchange: app.direct.exchange

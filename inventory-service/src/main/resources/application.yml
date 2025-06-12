@@ -1,0 +1,26 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  config:
+    import: optional:file:infra/dev.env[.properties]
+  application:
+    name: inventory-service
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    show_sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+rabbitmq:
+  queues:
+    order-created: order.created.queue
+    inventory-updated: inventory.updated.queue
+    order-status-updated: order.status.updated.queue

@@ -1,0 +1,16 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  config:
+    import: optional:file:infra/dev.env[.properties]
+  application:
+    name: payment-service
+
+rabbitmq.inventory-updated-queue: inventory.updated.queue
+rabbitmq.payment-processed-queue: payment.processed.queue
+rabbitmq.exchange: my.direct.exchange
+
+
+
+
+

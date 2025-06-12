@@ -1,0 +1,36 @@
+server:
+  port: ${SERVER_PORT}
+spring:
+  config:
+    import: optional:file:infra/dev.env[.properties]
+  application:
+    name: order-service
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    show_sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+rabbitmq:
+  order:
+    exchange: order.exchange
+    routingKey: order.created
+    queue: order.created.queue
+  queues:
+    order-status-updated: order.status.updated.queue
+  order-status:
+    queue: order.status.updated.queue
+
